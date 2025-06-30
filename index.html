@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Neverlandde の博客</title>
+    <meta name="author" content="Neverland" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" href="/images/avatar.jpg" />
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="/js/lib/home.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>NEVERLANDDE の博客</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;NEVERLANDDE の博客</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div id="home-head">
+    <div
+        id="home-background"
+        ref="homeBackground"
+        data-images="/images/background.jpg"
+    ></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>Neverlandde の博客</h1>
+                <h3>If you share a passion for ACG and tech, let’s be friends.</h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+</div>
+<div
+    id="home-posts-wrap"
+    ref="homePostsWrap"
+    true
+>
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="/2025/06/29/2025-06-29-%E7%94%A8%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E9%AB%98%E6%95%88%E8%A7%A3%E5%86%B3%E3%80%8C%E6%9C%80%E9%95%BF%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%90%E4%B8%B2%E3%80%8D%E9%97%AE%E9%A2%98/">
+        <h2 class="post-title">用滑动窗口高效解决「最长无重复子串」问题</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                算法专栏
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/6/29
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h2 id="业务常见场景"><a href="#业务常见场景" class="headerlink" title="业务常见场景"></a>业务常见场景</h2><ul>
+<li>聊天记录&#x2F;输入框中，<strong>限制不能出现重复字母</strong>，需要高效检测或高亮最长无重复字符的区间。</li>
+<li>游戏开发中，判断一串操作指令（如 <code>WASD</code> 按键序列）里，最长的不重复输入序列。</li>
+<li>复杂字符串数据解析，比如<strong>玩家昵称校验</strong>、物品唯一标识生成时，检测是否有重复字符。</li>
+</ul>
+<hr>
+<h2 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h2><blockquote>
+<p>给定一个字符串 <code>s</code>，找出不含有重复字符的<strong>最长子串的长度</strong>。</p>
+</blockquote>
+<p><strong>举例：</strong></p>
+<blockquote>
+<p>输入: s &#x3D; “abcabcbb”<br>输出: 3<br>解释: 最长子串是 “abc”，长度为 3。</p>
+</blockquote>
+<hr>
+<h2 id="暴力解法：穷举一切可能（不推荐）"><a href="#暴力解法：穷举一切可能（不推荐）" class="headerlink" title="暴力解法：穷举一切可能（不推荐）"></a>暴力解法：穷举一切可能（不推荐）</h2><ul>
+<li><strong>时间复杂度</strong>：O(n²)</li>
+<li><strong>空间复杂度</strong>：O(n)</li>
+</ul>
+<hr>
+<h2 id="滑动窗口解法："><a href="#滑动窗口解法：" class="headerlink" title="滑动窗口解法："></a>滑动窗口解法：</h2><p>滑动窗口本质是<strong>用两个指针维护一个动态区间</strong>，并实时记录满足条件的区间长度。</p>
+<h3 id="思路流程图"><a href="#思路流程图" class="headerlink" title="思路流程图"></a>思路流程图</h3><ol>
+<li>用哈希表（<code>Dictionary&lt;char, int&gt;</code>）存储每个字符最后出现的位置。</li>
+<li>用 <code>left</code> 和 <code>right</code> 两个指针表示窗口的左右边界。</li>
+<li>如果遇到重复字符，左指针直接跳到<strong>重复字符的下一个位置</strong>，保证区间没有重复。</li>
+<li>每次移动右指针，都更新当前最大长度。</li>
+</ol>
+<hr>
+<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><ul>
+<li><strong>时间复杂度</strong>：O(n)</li>
+<li><strong>空间复杂度</strong>：O(min(n, charset_size))</li>
+</ul>
+<hr>
+<h3 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h3><hr>
+<pre><code class="csharp">//暴力
+public int LengthOfLongestSubstring(string s) &#123;
+    int maxLen = 0;
+    for (int i = 0; i &lt; s.Length; i++) &#123;
+        var set = new HashSet&lt;char&gt;();
+        int j = i;
+        while (j &lt; s.Length &amp;&amp; !set.Contains(s[j])) &#123;
+            set.Add(s[j]);
+            j++;
+        &#125;
+        maxLen = Math.Max(maxLen, j - i);
+    &#125;
+    return maxLen;
+&#125;
+
+//滑动窗口
+public int LengthOfLongestSubstring(string s)
+&#123;
+    var dict = new Dictionary&lt;char, int&gt;();
+    int maxLen = 0, left = 0;
+    for (int right = 0; right &lt; s.Length; right++)
+    &#123;
+        char c = s[right];
+        if (dict.ContainsKey(c))
+        &#123;
+            // 注意：left 只能右移，不能后退
+            left = Math.Max(dict[c] + 1, left);
+        &#125;
+        dict[c] = right;
+        maxLen = Math.Max(maxLen, right - left + 1);
+    &#125;
+    return maxLen;
+&#125;
+
+
+/*
+
+- 支持 Unicode 字符（如 Emoji）时，需要注意 `char` 可能不够用，需用 `rune`（.NET 6+）。
+- 最长包含最多 K 种字符的子串？
+   ——这是典型“变体问题”，只需把哈希表按字符种类数控制即可。
+- 能不能只用数组？
+   ——如果字符串只包含 ASCII，可以直接用 `int[128]` 当哈希表，提高效率。
+
+*/
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" style="color: #00a596">滑动窗口</a>
+        </span>
+        
+    </div>
+    <a href="/2025/06/29/2025-06-29-%E7%94%A8%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E9%AB%98%E6%95%88%E8%A7%A3%E5%86%B3%E3%80%8C%E6%9C%80%E9%95%BF%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%90%E4%B8%B2%E3%80%8D%E9%97%AE%E9%A2%98/" class="go-post">阅读全文</a>
+</div>
+
+
+        <div class="page-current">
+    
+    <span class="current">1</span>
+    
+    
+    
+    
+</div>
+
+    </div>
+    
+    <div id="home-card">
+        <div id="card-style">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">Neverland</div>
+        <div class="description">
+            <p>👋 Hi, I’m Neverland!<br>欢迎来到我的个人博客。</p>
+
+        </div>
+        
+        <div class="icon-links">
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="https://github.com/Neverland-XFX">
+                    <i
+                        class="fa-brands fa-github fa-fw"
+                    ></i>
+                </a>
+            </span>
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&uin=578463782&site=qq&menu=yes">
+                    <i
+                        class="fa-brands fa-qq fa-fw"
+                    ></i>
+                </a>
+            </span>
+            
+        </div>
+        
+        
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://github.com/Neverland-XFX">GitHub</a>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Neverlandde の博客
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Neverland
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+</body>
+</html>
